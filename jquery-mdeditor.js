@@ -16,6 +16,7 @@
         this.$rendered = $(`<div class="rendered-markdown" title="Click to edit"></div>`);
         this.$rendered.css({
             background: 'white',
+            cursor: 'pointer',
             overflow: 'auto',
             position: 'absolute'
         });
