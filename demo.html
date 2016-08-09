@@ -4,15 +4,31 @@
         <meta charset="utf-8">
         <title>Markdown Editor</title>
         <style type="text/css">
+        body {
+            font: 14px/1.5 Helvetica, Sans-Serif;
+        }
         /* rendered output will automagically conform to the size of the textarea */
         textarea {
-            height: 272px;
+            height: 300px;
             width: 600px;
         }
         /* use .rendered-markdown to style the rendered output */
         .rendered-markdown {
             border: solid 1px #333;
             cursor: pointer;
+        }
+        .rendered-markdown h1,
+        .rendered-markdown h2,
+        .rendered-markdown h3,
+        .rendered-markdown p,
+        .rendered-markdown blockquote,
+        .rendered-markdown pre {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .rendered-markdown hr {
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
         </style>
     </head>
@@ -32,6 +48,8 @@ Most Markdown features are supported, including:
 1. Lists
 1. Formatting like **bold** and _italics_
 1. Inline `code blocks`
+
+-----
 
 Rendered output is scrollable. Scroll down!
 
