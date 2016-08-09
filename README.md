@@ -4,6 +4,10 @@ Quick proof-of-concept for a progressive enhancement [Markdown](https://daringfi
 
 Markdown rendering is handled by the excellent [markdown-js](https://github.com/evilstreak/markdown-js) library by @[evilstreak](https://github.com/evilstreak).
 
+## Demo
+
+See a demo of [markdown-editor in action](https://segdeha.github.io/markdown-editor/).
+
 ## Usage
 
 Download [jquery-mdeditor.js](https://raw.githubusercontent.com/segdeha/markdown-editor/master/jquery-mdeditor.js) and link to it in your HTML.
