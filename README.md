@@ -8,7 +8,7 @@ Markdown rendering is handled by the excellent [markdown-js](https://github.com/
 
 Download [jquery-mdeditor.js](https://raw.githubusercontent.com/segdeha/markdown-editor/master/jquery-mdeditor.js) and link to it in your HTML.
 
-For any given `&lt;textarea&gt;` on your page, such as the following:
+For any given `<textarea>` on your page, such as the following:
 
 ```html
 <textarea name="editor"></textarea>
