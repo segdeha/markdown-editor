@@ -1,6 +1,6 @@
 /**
  * Markdown Editor jQuery Plugin
- * @version 0.0.1
+ * @version 1.0.0
  * @author Andrew Hedges <andrew@hedges.nam>
  * @requires jQuery, markdown.js, ES6 template support
  */
