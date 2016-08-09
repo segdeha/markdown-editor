@@ -20,7 +20,7 @@
             top: `${offset.top}px`,
             width: `${width}px`
         });
-        this.$editor.after(this.$rendered);
+        $('body').append(this.$rendered);
         this.$editor.on('blur', this.handleBlur.bind(this));
         this.$rendered.on('click', this.handleClick.bind(this));
         window.requestAnimationFrame(this.showRendered.bind(this));
