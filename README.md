@@ -40,6 +40,6 @@ You can also store the return value of the `mdEditor()` call and show/hide the r
 
 ```javascript
 var editor = $('[name="editor"]').mdEditor();
-editor.hideRendered();
 editor.showRendered();
+editor.hideRendered();
 ```
