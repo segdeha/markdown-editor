@@ -1,11 +1,15 @@
 /**
  * Markdown Editor jQuery Plugin
  * @version 1.0.0
- * @author Andrew Hedges <andrew@hedges.nam>
+ * @author Andrew Hedges <andrew@hedges.name>
+ * @license https://github.com/segdeha/markdown-editor/blob/master/LICENSE MIT License
  * @requires jQuery, markdown.js, ES6 template support
  */
 ;(function (window, document, $, markdown, undefined) {
 
+    /**
+     * @constructor
+     */
     function MarkdownEditor(el) {
         this.timer     = null; // used for throttling window resize events
         this.$editor   = $(el);
@@ -24,20 +28,33 @@
     }
 
     MarkdownEditor.prototype = Object.assign(MarkdownEditor.prototype, {
+
+        /**
+         * @public
+         */
         showRendered: function showRendered() {
             var output = markdown.toHTML(this.$editor.val());
             this.$rendered.html(output).show();
         },
 
+        /**
+         * @public
+         */
         hideRendered: function hideRendered() {
             this.$rendered.hide();
             this.$editor.focus();
         },
 
+        /**
+         * @private
+         */
         _handleBlur: function _handleBlur(evt) {
             this.showRendered();
         },
 
+        /**
+         * @private
+         */
         _handleClick: function _handleClick(evt) {
             if (evt.target.matches('a')) {
                 // prevent default behavior
@@ -52,11 +69,17 @@
             }
         },
 
+        /**
+         * @private
+         */
         _handleResize: function _handleResize(evt) {
             clearTimeout(this.timer);
             this.timer = setTimeout(this._updateSize.bind(this), 17);
         },
 
+        /**
+         * @private
+         */
         _updateSize: function _updateSize() {
             var height = this.$editor.outerHeight();
             var width  = this.$editor.outerWidth();
@@ -68,6 +91,7 @@
                 width: `${width}px`
             });
         }
+
     });
 
     $.fn.mdEditor = function initEditor() {
