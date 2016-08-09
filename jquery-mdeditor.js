@@ -9,9 +9,6 @@
     function MarkdownEditor(el) {
         this.timer = null; // used for throttling window resize events
         this.$editor = $(el);
-        var height = this.$editor.outerHeight();
-        var width = this.$editor.outerWidth();
-        var offset = this.$editor.offset();
         this.$rendered = $(`<div class="rendered-markdown" title="Click to edit"></div>`);
         this.$rendered.css({
             background: 'white',
