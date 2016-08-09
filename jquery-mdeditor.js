@@ -52,7 +52,7 @@
         }
     });
 
-    $.fn.mdEditor = function initEditor(selector) {
+    $.fn.mdEditor = function initEditor() {
         return new MarkdownEditor(this);
     };
 
