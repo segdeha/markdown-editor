@@ -4,19 +4,23 @@
         <meta charset="utf-8">
         <title>Markdown Editor</title>
         <style type="text/css">
-        [name="editor"] {
-            height: 400px;
+        /* rendered output will automagically conform to the size of the textarea */
+        textarea {
+            height: 272px;
             width: 600px;
         }
+        /* use .rendered-markdown to style the rendered output */
+        .rendered-markdown {
+            border: solid 1px #333;
+            cursor: pointer;
+        }
         </style>
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script defer src="markdown.js"></script>
-        <script defer src="jquery-mdeditor.js"></script>
-        <script defer src="behaviors.js"></script>
     </head>
     <body>
         <h1>Markdown Editor</h1>
         <p>Markdown Editor is a jQuery plugin that will display a rendered version of any Markdown text in a <code>&lt;textarea&gt;</code> field.</p>
+
+        <!-- editor 1 -->
         <textarea name="editor"># Markdown Editor Demo
 
 Click in this box to edit the [Markdown](https://daringfireball.net/projects/markdown/syntax). Click outside the box to see it rendered.
@@ -26,6 +30,28 @@ Most Markdown features are supported, including:
 1. Headers
 1. Links
 1. Lists
-1. Formatting like **bold** and _italics_</textarea>
+1. Formatting like **bold** and _italics_
+1. Inline `code blocks`
+
+Rendered output is scrollable. Scroll down!
+
+    var this = is.a.code.block();
+</textarea>
+
+        <!-- editor 2-->
+        <textarea name="editor2"># Markdown Second Editor Demo
+
+You can even have multiple editors on the page at one time!</textarea>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="markdown.js"></script>
+        <script src="jquery-mdeditor.js"></script>
+        <script type="text/javascript">
+        // create editor instance once the DOM has loaded
+        $(function () {
+            var editor = $('[name="editor"]').mdEditor();
+            var editor2 = $('[name="editor2"]').mdEditor();
+        });
+        </script>
     </body>
 </html>
