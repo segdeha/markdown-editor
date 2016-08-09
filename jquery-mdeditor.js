@@ -15,13 +15,10 @@
         this.$rendered = $(`<div class="rendered-markdown" title="Click to edit"></div>`);
         this.$rendered.css({
             background: 'white',
-            height: `${height}px`,
-            left: `${offset.left}px`,
             overflow: 'auto',
-            position: 'absolute',
-            top: `${offset.top}px`,
-            width: `${width}px`
+            position: 'absolute'
         });
+        this.updateSize();
         $('body').append(this.$rendered);
         this.$editor.on('blur', this.handleBlur.bind(this));
         this.$rendered.on('click', this.handleClick.bind(this));
