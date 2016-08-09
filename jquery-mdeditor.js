@@ -35,7 +35,8 @@
          */
         showRendered: function showRendered() {
             var output = markdown.toHTML(this.$editor.val());
-            this.$rendered.html(output).show();
+            this.$rendered.html(output);
+            this.$rendered.show();
         },
 
         /**
