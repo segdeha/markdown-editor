@@ -7,19 +7,19 @@
 ;(function (window, document, $, markdown, undefined) {
 
     function MarkdownEditor(el) {
-        this.timer = null; // used for throttling window resize events
-        this.$editor = $(el);
+        this.timer     = null; // used for throttling window resize events
+        this.$editor   = $(el);
         this.$rendered = $(`<div class="rendered-markdown" title="Click to edit"></div>`);
         this.$rendered.css({
             background: 'white',
             overflow: 'auto',
             position: 'absolute'
         });
-        this.updateSize();
+        this._updateSize();
         $('body').append(this.$rendered);
-        this.$editor.on('blur', this.handleBlur.bind(this));
-        this.$rendered.on('click', this.handleClick.bind(this));
-        $(window).on('resize', this.handleResize.bind(this));
+        this.$editor.on('blur', this._handleBlur.bind(this));
+        this.$rendered.on('click', this._handleClick.bind(this));
+        $(window).on('resize', this._handleResize.bind(this));
         window.requestAnimationFrame(this.showRendered.bind(this));
     }
 
@@ -28,14 +28,17 @@
             var output = markdown.toHTML(this.$editor.val());
             this.$rendered.html(output).show();
         },
+
         hideRendered: function hideRendered() {
             this.$rendered.hide();
             this.$editor.focus();
         },
-        handleBlur: function handleBlur(evt) {
+
+        _handleBlur: function _handleBlur(evt) {
             this.showRendered();
         },
-        handleClick: function handleClick(evt) {
+
+        _handleClick: function _handleClick(evt) {
             if (evt.target.matches('a')) {
                 // prevent default behavior
                 evt.preventDefault();
@@ -48,13 +51,15 @@
                 this.hideRendered();
             }
         },
-        handleResize: function handleResize(evt) {
+
+        _handleResize: function _handleResize(evt) {
             clearTimeout(this.timer);
-            this.timer = setTimeout(this.updateSize.bind(this), 17);
+            this.timer = setTimeout(this._updateSize.bind(this), 17);
         },
-        updateSize: function updateSize() {
+
+        _updateSize: function _updateSize() {
             var height = this.$editor.outerHeight();
-            var width = this.$editor.outerWidth();
+            var width  = this.$editor.outerWidth();
             var offset = this.$editor.offset();
             this.$rendered.css({
                 height: `${height}px`,
