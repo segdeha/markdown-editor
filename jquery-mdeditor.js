@@ -23,6 +23,7 @@
         this.$editor.after(this.$rendered);
         this.$editor.on('blur', this.handleBlur.bind(this));
         this.$rendered.on('click', this.handleClick.bind(this));
+        window.requestAnimationFrame(this.showRendered.bind(this));
     }
 
     MarkdownEditor.prototype = Object.assign(MarkdownEditor.prototype, {
