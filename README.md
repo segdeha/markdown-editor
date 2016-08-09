@@ -8,7 +8,7 @@ Markdown rendering is handled by the excellent [markdown-js](https://github.com/
 
 Download [jquery-mdeditor.js](https://raw.githubusercontent.com/segdeha/markdown-editor/master/jquery-mdeditor.js) and link to it in your HTML.
 
-For any given &lt;textarea&gt; on your page, such as the following:
+For any given `&lt;textarea&gt;` on your page, such as the following:
 
 ```html
 <textarea name="editor"></textarea>
@@ -19,6 +19,8 @@ Turn it into an editor that renders Markdown by selecting the element using jQue
 ```javascript
 $('[name="editor"]').mdEditor();
 ```
+
+-----
 
 You can even have multiple editors on the page, though you currently have to initialize them one at a time.
 
@@ -31,6 +33,8 @@ You can even have multiple editors on the page, though you currently have to ini
 $('[name="editor"]').mdEditor();
 $('[name="editor2"]').mdEditor();
 ```
+
+-----
 
 You can also store the return value of the `mdEditor()` call and show/hide the rendered output programatically, as follows:
 
