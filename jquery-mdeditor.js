@@ -11,11 +11,12 @@
         var height = this.$editor.outerHeight();
         var width = this.$editor.outerWidth();
         var offset = this.$editor.offset()
-        this.$rendered = $(`<div class="rendered-markdown"></div>`);
+        this.$rendered = $(`<div class="rendered-markdown" title="Click to edit"></div>`);
         this.$rendered.css({
             background: 'white',
             height: `${height}px`,
             left: `${offset.left}px`,
+            overflow: 'auto',
             position: 'absolute',
             top: `${offset.top}px`,
             width: `${width}px`
